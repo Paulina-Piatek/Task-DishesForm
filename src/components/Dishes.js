@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState} from "react"
 import { useForm } from "react-hook-form"
-import '../styles/dishes.css'
-import '../index.css'
+import "../styles/dishes.css"
+import "../index.css"
 
-function Dishes() {
+const Dishes = () => {
     const [selectedDishType,setselectedDishType] = useState("pizza")
     const {
         register,
         handleSubmit,
         formState: { errors } 
     }= useForm();
-       //const onSubmit = data => alert(JSON.stringify(data));
-       const onSubmit = data => fetch('https://frosty-wood-6558.getsandbox.com:443/dishes',
-          {method:'POST',
-          body:JSON.stringify(data)})
-    const DISH_TYPES = [
+      // const onSubmit = data => alert(JSON.stringify(data));
+       const onSubmit = data => { fetch("https://frosty-wood-6558.getsandbox.com:443/dishes",
+         {method:"POST", body:JSON.stringify(data)});
+         alert("Success! You send Form !"); }
+    const Dish_types = [
         {
           id: "pizza",
           label: "Pizza"
@@ -28,7 +28,6 @@ function Dishes() {
           label: "Sandwich"
         }
       ];
-
   console.log("errors", errors);
   const PizzaOptions = () => {
     if (selectedDishType !== "pizza") return null;
@@ -116,7 +115,7 @@ function Dishes() {
             const selectedType=e.target.value;
             setselectedDishType(selectedType);
         } }>
-          {DISH_TYPES.map(({ id, label }) => (
+          {Dish_types.map(({ id, label }) => (
             <option key={id} value={id}>
             {label}
             </option>
@@ -134,6 +133,6 @@ function Dishes() {
     </form>
     </div> 
   )
-}
+};
 
-export default Dishes
+export default Dishes;

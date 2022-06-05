@@ -22,17 +22,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-size: var(--normal-font-size);
-  /* background: #252829;
-  color: white; */
+
 }
 
 .app {
   min-height: 100vh;
-  /* position: relative;
-  background: #161616;
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
