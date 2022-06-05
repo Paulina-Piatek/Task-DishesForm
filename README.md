@@ -4,7 +4,7 @@
 
 This form was made with React and React Hook Form.
 The useState hook was used to select a dish type.
-
+If the form is to work properly, add it: React modules (node_modules) which are added when creating the Application.
 ## Installation
 
 The App was created:
